@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trenchers Anonymous</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            border-bottom: 2px solid #34495e;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .motto {
+            color: #34495e;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .main-content {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .rule-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 500;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 15px;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 35px;
+            color: #5d6d7e;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .form-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .checkbox-group {
+            margin: 15px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 2px;
+            transform: scale(1.2);
+        }
+
+        .checkbox-item label {
+            flex: 1;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-item .description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .custom-addiction {
+            margin-top: 15px;
+        }
+
+        .custom-addiction input {
+            margin-top: 8px;
+        }
+
+        .preview-section {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #3498db;
+        }
+
+        .preview-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .preview-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            min-height: 60px;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 10px;
+        }
+
+        .step {
+            margin: 15px 0;
+            padding: 18px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+            color: #2c3e50;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #7f8c8d;
+            font-style: italic;
+            border-top: 1px solid #bdc3c7;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+        }
+
+        .serenity-prayer {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 25px;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .main-content, .section {
+                padding: 25px;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Trenchers Anonymous</h1>
+            <p class="subtitle">A Fellowship for Recovery from Trading Addiction</p>
+            <p class="motto">"One Day at a Time, One Decision at a Time"</p>
+        </div>
+
+        <div class="main-content">
+            <h2 class="rule-title">Create Your Introduction - Rule #1</h2>
+            <p class="intro-text">Fill out the form below to create your personalized introduction for the meeting. This will help you acknowledge your challenges and connect with others in the fellowship.</p>
+            
+            <div class="form-section">
+                <h3 class="form-title">Personal Information</h3>
+                
+                <div class="form-group">
+                    <label for="name">Your Name (or Preferred Alias):</label>
+                    <input type="text" id="name" placeholder="e.g., John, CryptoTrader, Anonymous, etc.">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-title">Select Your Addictions</h3>
+                <p style="margin-bottom: 20px; color: #6c757d;">Check all that apply to your situation:</p>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="pumpfun" value="Pump.fun">
+                        <label for="pumpfun">
+                            <strong>Pump.fun</strong>
+                            <div class="description">Speculative trading platforms and quick-profit schemes</div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bonk" value="Bonk">
+                        <label for="bonk">
+                            <strong>Bonk</strong>
+                            <div class="description">High-risk investment decisions based on social media trends</div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="launchcoin" value="Launch A Coin">
+                        <label for="launchcoin">
+                            <strong>Launch A Coin</strong>
+                            <div class="description">Creating or investing in unregulated financial instruments</div>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="charts" value="constantly checking charts">
+                        <label for="charts">
+                            <strong>Chart Checking</strong>
+                            <div class="description">Compulsively monitoring price movements throughout the day</div>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="fomo" value="FOMO trading">
+                        <label for="fomo">
+                            <strong>FOMO Trading</strong>
+                            <div class="description">Fear of missing out leading to impulsive trades</div>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="leverage" value="excessive leverage">
+                        <label for="leverage">
+                            <strong>Leverage Addiction</strong>
+                            <div class="description">Using dangerous amounts of borrowed money to trade</div>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="social" value="trading based on social media">
+                        <label for="social">
+                            <strong>Social Media Trading</strong>
+                            <div class="description">Making decisions based on Twitter, Reddit, or TikTok advice</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="custom-addiction">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="custom" value="">
+                        <label for="custom">
+                            <strong>Custom Addiction</strong>
+                            <div class="description">Add your own specific trading addiction</div>
+                        </label>
+                    </div>
+                    <input type="text" id="customText" placeholder="Describe your specific addiction..." class="hidden">
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3 class="preview-title">Your Introduction Preview:</h3>
+                <div class="preview-text" id="previewText">
+                    Fill out the form above to see your introduction preview...
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="generateTweet">Share on Twitter</button>
+                <button class="btn btn-secondary" id="copyText">Copy Text</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>The Twelve Steps of Trenchers Anonymous</h3>
+            <div class="step">1. We admitted we were powerless over our trading compulsions—that our financial lives had become unmanageable.</div>
+            <div class="step">2. Came to believe that a Power greater than ourselves could restore us to financial sanity.</div>
+            <div class="step">3. Made a decision to turn our financial decisions and trading habits over to the care of sound principles and professional guidance.</div>
+            <div class="step">4. Made a searching and fearless moral inventory of our trading history and financial behaviors.</div>
+            <div class="step">5. Admitted to ourselves, to our Higher Power, and to another human being the exact nature of our compulsive trading.</div>
+            <div class="step">6. Were entirely ready to have our Higher Power remove all these defects of character that led to poor financial decisions.</div>
+        </div>
+
+        <div class="footer">
+            <div class="serenity-prayer">
+                "Grant me the serenity to accept the market conditions I cannot control,<br>
+                The courage to change the trading behaviors I can,<br>
+                And the wisdom to know the difference."
+            </div>
+            <p class="disclaimer">This is a fictional support group website created for illustrative purposes. If you're struggling with gambling or trading addiction, please seek help from qualified professionals or established support groups.</p>
+        </div>
+    </div>
+
+    <script>
+        // Form elements
+        const nameInput = document.getElementById('name');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const customCheckbox = document.getElementById('custom');
+        const customTextInput = document.getElementById('customText');
+        const previewText = document.getElementById('previewText');
+        const generateTweetBtn = document.getElementById('generateTweet');
+        const copyTextBtn = document.getElementById('copyText');
+
+        // Show/hide custom text input
+        customCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                customTextInput.classList.remove('hidden');
+                customTextInput.focus();
+            } else {
+                customTextInput.classList.add('hidden');
+                customTextInput.value = '';
+                updatePreview();
+            }
+        });
+
+        // Update preview when inputs change
+        function updatePreview() {
+            const name = nameInput.value.trim() || '[Your Name]';
+            const selectedAddictions = [];
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked && checkbox.id !== 'custom') {
+                    selectedAddictions.push(checkbox.value);
+                }
+            });
+
+            // Handle custom addiction
+            if (customCheckbox.checked && customTextInput.value.trim()) {
+                selectedAddictions.push(customTextInput.value.trim());
+            }
+
+            let introText = `Hi, my name is ${name} and I am addicted to: `;
+            
+            if (selectedAddictions.length === 0) {
+                introText += '[Select your addictions above]';
+            } else {
+                introText += selectedAddictions.join(', ');
+            }
+            
+            introText += '. See you in the meeting...';
+
+            previewText.textContent = introText;
+        }
+
+        // Add event listeners
+        nameInput.addEventListener('input', updatePreview);
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updatePreview);
+        });
+        customTextInput.addEventListener('input', function() {
+            updatePreview();
+        });
+
+        // Generate tweet
+        generateTweetBtn.addEventListener('click', function() {
+            const introText = previewText.textContent;
+            if (introText === 'Fill out the form above to see your introduction preview...') {
+                alert('Please fill out the form first!');
+                return;
+            }
+
+            const tweetText = `${introText}\n\nTrenchers Anonymous - A Fellowship for Recovery from Trading Addiction\n\n#TrenchersAnonymous #TradingAddiction #Recovery`;
+            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+            window.open(tweetUrl, '_blank');
+        });
+
+        // Copy text
+        copyTextBtn.addEventListener('click', function() {
+            const introText = previewText.textContent;
+            if (introText === 'Fill out the form above to see your introduction preview...') {
+                alert('Please fill out the form first!');
+                return;
+            }
+
+            navigator.clipboard.writeText(introText).then(function() {
+                const originalText = copyTextBtn.textContent;
+                copyTextBtn.textContent = 'Copied!';
+                copyTextBtn.style.backgroundColor = '#27ae60';
+                setTimeout(function() {
+                    copyTextBtn.textContent = originalText;
+                    copyTextBtn.style.backgroundColor = '#95a5a6';
+                }, 2000);
+            }).catch(function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = introText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Text copied to clipboard!');
+            });
+        });
+
+        // Initialize preview
+        updatePreview();
+    </script>
+</body>
+</html>
